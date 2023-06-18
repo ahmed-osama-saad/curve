@@ -15,6 +15,12 @@ class SettingsBloc extends HydratedBloc<SettingsEvent, SettingsState> {
         emit(SettingsState(newSettings));
       },
     );
+    on<ChangeSpeedSettingsEvent>(
+      (event, emit) {
+        final newSettings = state.settings.copyWith(speed: event.speed);
+        emit(SettingsState(newSettings));
+      },
+    );
     on<ChangeBottomSettingsEvent>(
       (event, emit) {
         final newSettings = state.settings.copyWith(bottom: event.bottom);

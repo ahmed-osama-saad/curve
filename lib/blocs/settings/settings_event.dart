@@ -9,6 +9,12 @@ class ChangeRepsSettingsEvent extends SettingsEvent {
   ChangeRepsSettingsEvent(this.reps);
 }
 
+class ChangeSpeedSettingsEvent extends SettingsEvent {
+  final int speed;
+
+  ChangeSpeedSettingsEvent(this.speed);
+}
+
 class ChangeBottomSettingsEvent extends SettingsEvent {
   final int bottom;
 

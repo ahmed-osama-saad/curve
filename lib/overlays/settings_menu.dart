@@ -68,6 +68,37 @@ class SettingsMenu extends StatelessWidget {
                     ),
                     BlocSelector<SettingsBloc, SettingsState, int>(
                       selector: (state) {
+                        return state.settings.speed;
+                      },
+                      builder: (context, speed) {
+                        return Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Speed $speed',
+                                style: const TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Slider(
+                                  value: speed.toDouble(),
+                                  min: 0,
+                                  max: 30,
+                                  onChanged: (value) {
+                                    context.read<SettingsBloc>().add(
+                                        ChangeSpeedSettingsEvent(
+                                            value.toInt()));
+                                  }),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    BlocSelector<SettingsBloc, SettingsState, int>(
+                      selector: (state) {
                         return state.settings.bottom;
                       },
                       builder: (context, bottom) {
