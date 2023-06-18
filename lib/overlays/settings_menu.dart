@@ -89,7 +89,8 @@ class SettingsMenu extends StatelessWidget {
                                   max: 30,
                                   onChanged: (value) {
                                     context.read<SettingsBloc>().add(
-                                        ChangeRepsSettingsEvent(value.toInt()));
+                                        ChangeBottomSettingsEvent(
+                                            value.toInt()));
                                   }),
                             ],
                           ),
@@ -119,7 +120,7 @@ class SettingsMenu extends StatelessWidget {
                                   max: 30,
                                   onChanged: (value) {
                                     context.read<SettingsBloc>().add(
-                                        ChangeRepsSettingsEvent(value.toInt()));
+                                        ChangeUpSettingsEvent(value.toInt()));
                                   }),
                             ],
                           ),
@@ -149,7 +150,7 @@ class SettingsMenu extends StatelessWidget {
                                   max: 30,
                                   onChanged: (value) {
                                     context.read<SettingsBloc>().add(
-                                        ChangeRepsSettingsEvent(value.toInt()));
+                                        ChangeTopSettingsEvent(value.toInt()));
                                   }),
                             ],
                           ),
@@ -179,7 +180,7 @@ class SettingsMenu extends StatelessWidget {
                                   max: 30,
                                   onChanged: (value) {
                                     context.read<SettingsBloc>().add(
-                                        ChangeRepsSettingsEvent(value.toInt()));
+                                        ChangeDownSettingsEvent(value.toInt()));
                                   }),
                             ],
                           ),
